@@ -64,6 +64,11 @@ void pop(Node** pList);
 int isEmpty(Node* List);
 
 int checkStartInput(const char* s);
-int checkBrackets(const char* s);
+int checkAllBrackets(const char* s);
+int checkInputString(const char* s);
+int checkOperator(const char* s, int i, int length);
+int checkCurrentBrackets(const char* s, int i);
+int checkCorrectness(const char* s, int* leftBrackets, int* rightBrackets,
+                     int* i);
 
 #endif  // CALC_SUPPORT_H
