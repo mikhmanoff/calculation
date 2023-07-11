@@ -12,13 +12,11 @@ int checkInputString(const char *s) {
         flag = SUCCESS;
       } else {
         flag = FAILTURE;
-        printf("error");
         break;
       }
     }
   } else {
     flag = FAILTURE;
-    printf("error");
   }
 
   return flag;
@@ -177,7 +175,7 @@ int checkCorrectness(const char *s, int *leftBrackets, int *rightBrackets,
 }
 
 int main() {
-  char *s = "attan(9+8+3-1)";
+  char *s = "4mid2+(5-4)";
   int rightBracket = 0, leftBracket = 0;
   int err = checkInputString(s);
 
