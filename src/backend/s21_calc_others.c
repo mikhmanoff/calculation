@@ -1,6 +1,6 @@
 #include "calc_support.h"
 
-int checkOperator(funcType operator) {
+int operatorCheck(funcType operator) {
   int res = 0;
 
   if (operator== plus_t || operator== minus_t || operator== div_tt || operator==
@@ -12,7 +12,7 @@ int checkOperator(funcType operator) {
   return res;
 }
 
-int checkFunction(funcType function) {
+int functionCheck(funcType function) {
   int res = 0;
 
   if (function == cos_t || function == sin_t || function == tan_t ||
