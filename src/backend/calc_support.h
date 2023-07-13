@@ -75,4 +75,7 @@ int checkCorrectness(const char* s, int* leftBrackets, int* rightBrackets,
 Node* parseInput(const char* str);
 Node* inverseNode(Node* list);
 
+int operatorCheck(funcType operator);
+int functionCheck(funcType function);
+
 #endif  // CALC_SUPPORT_H

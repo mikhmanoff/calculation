@@ -44,7 +44,7 @@ Node *parseInput(const char *str) {
         push(&operandList, 0, mod_t, MEDIUM_PRIORITY);
       }
     } else if (str[i] == '^') {
-      push(&operandList, 3, 0, pow_t);
+      push(&operandList, 0, pow_t, HIGH_PRIORITY);
     } else if (str[i] == 'c' || str[i] == 's' || str[i] == 't' ||
                str[i] == 'a' || str[i] == 'l' || str[i] == 'm') {
       if (str[i] == 'm' && str[i + 1] == 'o' && str[i + 2] == 'd') {
@@ -112,18 +112,18 @@ Node *parseInput(const char *str) {
   return operandList;
 }
 
-int main() {
-  char *s = "1+2+3-log(6)*sqrt(10)+ln(10)";
-  Node *list = NULL;
-  int rightBracket = 0, leftBracket = 0;
-  list = parseInput(s);
+// int main() {
+//   char *s = "1+2+3-log(6)*sqrt(10)+ln(10)";
+//   Node *list = NULL;
+//   int rightBracket = 0, leftBracket = 0;
+//   list = parseInput(s);
 
-  //   print(list);
-  //   printf("\n\n\n");
-  Node *tmp = inverseNode(list);
-  print(tmp);
-  //   push(&list, 14.48, tan_t, ULTRA_PRIORITY);
-  //   print(list);
+//   //   print(list);
+//   //   printf("\n\n\n");
+//   Node *tmp = inverseNode(list);
+//   print(tmp);
+//   //   push(&list, 14.48, tan_t, ULTRA_PRIORITY);
+//   //   print(list);
 
-  return 0;
-}
+//   return 0;
+// }
