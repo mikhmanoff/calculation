@@ -49,9 +49,9 @@ Node *s21_infixToPolsih(Node *list, double xValue) {
 
     if (list->funType == right_bracket_t) {
       while (stack->funType != left_bracket_t) {
-        printf("###################\n");
-        printf("%d\n", stack->funType);
-        printf("###################\n");
+        // printf("###################\n"); // потом удалить
+        // printf("%d\n", stack->funType);
+        // printf("###################\n");
         push(&polish, stack->num, stack->funType, stack->priority);
         pop(&stack);
       }
@@ -71,20 +71,8 @@ Node *s21_infixToPolsih(Node *list, double xValue) {
   return polish;
 }
 
-// void printStack(Node *stack) {
-//   if (list == NULL) {
-//     printf("NULL\n");
-//     exit(0);
-//   }
-//   for (Node *p = list; p != NULL; p = p->next) {
-//     printf("Приоритет - %d\nЧисло - %lf\nТип - %d\n-------------------\n",
-//            p->priority, p->num, p->funType);
-//   }
-//   printf("\n");
-// }
-
 int main() {
-  char str_1[200] = "acos(1)*asin(1)";  // -0.1+0.2
+  char str_1[200] = "acos(1)*asin(1)";
 
   Node *number_list = parseInput(str_1);
 
