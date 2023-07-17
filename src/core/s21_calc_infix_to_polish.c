@@ -6,7 +6,6 @@ Node *s21_infixToPolsih(Node *list, double xValue) {
   Node *polish = NULL;
 
   while (list) {
-    printf("!\n");
     if (operatorCheck(list->funType) || functionCheck(list->funType)) {
       if (stack == NULL) {
         push(&stack, list->num, list->funType, list->priority);
@@ -52,6 +51,7 @@ Node *s21_infixToPolsih(Node *list, double xValue) {
         // printf("###################\n"); // потом удалить
         // printf("%d\n", stack->funType);
         // printf("###################\n");
+
         push(&polish, stack->num, stack->funType, stack->priority);
         pop(&stack);
       }
