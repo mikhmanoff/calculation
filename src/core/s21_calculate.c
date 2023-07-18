@@ -17,7 +17,7 @@ double s21_calculation(Node *list) {
 
       funcType operator= list->funType;
       pop(&list);
-      res = 1;  // заглушка
+      res = evaluate(val1, val2, operator);
       push(&numRes, res, 0, NO_PRIORITY);
     }
 
@@ -27,12 +27,12 @@ double s21_calculation(Node *list) {
       double val1 = 0;
       funcType operator= list->funType;
       pop(&list);
-      res = 2;  // заглушка
+      res = evaluate(val1, val2, operator);
       push(&numRes, res, 0, NO_PRIORITY);
     }
   }
 
-  res = 3;
+  res = numRes->num;
   pop(&numRes);
 
   return res;
