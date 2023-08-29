@@ -77,6 +77,6 @@ uninstall:
 	@rm -rf build-SmartCalc-Desktop
 
 clean: uninstall clean_gcov_report
-	rm -f $(LIB) $(CORE_OBJECTS) $(BACKEND_OBJECTS) test debug
+	rm -f $(LIB) $(CORE_OBJECTS) $(BACKEND_OBJECTS) SmartCalc/SmartCalc.pro.user test debug
 
 rebuild: clean all
