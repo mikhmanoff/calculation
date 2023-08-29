@@ -103,12 +103,12 @@ double evaluate(double val1, double val2, funcType operator) {
 }
 
 int main() {
-  char str_1[200] = "(10-3";  // -0.1+0.2
+  char str_1[200] = "sin(23.23)";  // -0.1+0.2
   if (checkInputString(str_1) == 0) {
     Node *number_list = parseInput(str_1);
     number_list = s21_infixToPolsih(number_list, 0);
     double result = s21_calculation(number_list);
-    printf("%lf\n", result);
+    printf("\n%lf\n", result);
   } else {
     printf("error\n");
   }

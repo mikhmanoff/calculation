@@ -42,7 +42,8 @@ int checkStartInput(const char *s) {
 
 int checkAllBrackets(const char *s) {
   int flag = SUCCESS;
-  char *copy = strdup(s);
+  char *copy = malloc(strlen(s) + 1);
+  strcpy(copy, s);
 
   int length = strlen(copy);
   char *stack = malloc(length * sizeof(char));
@@ -97,7 +98,7 @@ int checkOperator(const char *s, int i, int length) {
   }
 
   if (s[i] == '0' && s[i + 1] == 0) {
-    flag == FAILTURE;
+    // flag == FAILTURE;
   }
 
   return flag;

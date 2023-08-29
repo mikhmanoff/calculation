@@ -14,7 +14,8 @@ Node *parseInput(const char *str) {
     if ((!(str[i] >= '0' && str[i] <= '9') && (j && str[i] != '.')) ||
         (str[i + 1] == '\0' && j)) {
       push(&operandList, atof(numberTempStr), number, NO_PRIORITY);
-      bzero(&numberTempStr, strlen(numberTempStr));
+      memset(numberTempStr, 0, sizeof(numberTempStr));
+
       j = 0;
     }
     if (str[i] == 'x') {
