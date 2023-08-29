@@ -71,18 +71,18 @@ Node *s21_infixToPolsih(Node *list, double xValue) {
   return polish;
 }
 
-int main() {
-  char str_1[200] = "acos(1)*asin(1)";
+// int main() {
+//   char str_1[200] = "acos(1)*asin(1)";
 
-  Node *number_list = parseInput(str_1);
+//   Node *number_list = parseInput(str_1);
 
-  print(number_list);
-  printf("\n\n\n");
-  // number_list = inverseNode(number_list);
+//   print(number_list);
+//   printf("\n\n\n");
+//   // number_list = inverseNode(number_list);
 
-  number_list = s21_infixToPolsih(number_list, 0);
+//   number_list = s21_infixToPolsih(number_list, 0);
 
-  print(number_list);
+//   print(number_list);
 
-  return 0;
-}
+//   return 0;
+// }

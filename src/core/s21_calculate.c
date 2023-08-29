@@ -3,37 +3,44 @@
 double s21_calculation(Node *list) {
   double res = 0.;
   Node *numRes = NULL;
+  // printf("!!!!!!!!!!!!!!!\n");
 
   for (int i = 0; list != NULL; i++) {
     if (list->funType == 0 || list->funType == 1) {
       push(&numRes, list->num, list->funType, list->priority);
       pop(&list);
     }
-    if (list->funType > 1 && list->funType < 8) {
-      double val2 = numRes->num;
-      pop(&numRes);
-      double val1 = numRes->num;
-      pop(&numRes);
 
-      funcType operator= list->funType;
-      pop(&list);
-      res = evaluate(val1, val2, operator);
-      push(&numRes, res, 0, NO_PRIORITY);
+    if (list != NULL) {
+      if (list->funType > 1 && list->funType < 8) {
+        double val2 = numRes->num;
+        // printf("%d\n", i + 1);
+        pop(&numRes);
+        double val1 = numRes->num;
+        pop(&numRes);
+        funcType operator= list->funType;
+        // printf("%f %f %d\n", val1, val2, operator);
+
+        pop(&list);
+        res = evaluate(val1, val2, operator);
+        push(&numRes, res, 0, NO_PRIORITY);
+      }
     }
-
-    if (list->funType > 7 && list->funType < 17) {
-      double val2 = numRes->num;
-      pop(&numRes);
-      double val1 = 0;
-      funcType operator= list->funType;
-      pop(&list);
-      res = evaluate(val1, val2, operator);
-      push(&numRes, res, 0, NO_PRIORITY);
+    if (list != NULL) {
+      if (list->funType > 7 && list->funType < 17) {
+        double val2 = numRes->num;
+        pop(&numRes);
+        double val1 = 0;
+        funcType operator= list->funType;
+        pop(&list);
+        res = evaluate(val1, val2, operator);
+        push(&numRes, res, 0, NO_PRIORITY);
+      }
     }
   }
 
   res = numRes->num;
-  pop(&numRes);
+  // pop(&numRes);
 
   return res;
 }
@@ -93,4 +100,19 @@ double evaluate(double val1, double val2, funcType operator) {
   }
 
   return result;
+}
+
+int main() {
+  char str_1[200] = "(10-3";  // -0.1+0.2
+  if (checkInputString(str_1) == 0) {
+    Node *number_list = parseInput(str_1);
+    number_list = s21_infixToPolsih(number_list, 0);
+    double result = s21_calculation(number_list);
+    printf("%lf\n", result);
+  } else {
+    printf("error\n");
+  }
+
+  // print(number_list);
+  // return 0;
 }

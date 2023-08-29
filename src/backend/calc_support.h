@@ -78,4 +78,6 @@ Node* inverseNode(Node* list);
 int operatorCheck(funcType operator);
 int functionCheck(funcType function);
 
+double monthAnnuity(double loan, int period, double rate)
+
 #endif  // CALC_SUPPORT_H
