@@ -74,7 +74,7 @@ clean_gcov_report:
 	backend/*.gcno backend/*.gcda backend/*.gcov backend/*.info report
 
 uninstall:
-	@rm -rf build-SmartCalc-Desktop-Debug
+	@rm -rf build-SmartCalc-Desktop
 
 clean: uninstall clean_gcov_report
 	rm -f $(LIB) $(CORE_OBJECTS) $(BACKEND_OBJECTS) test debug
