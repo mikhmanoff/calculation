@@ -102,13 +102,13 @@ double evaluate(double val1, double val2, funcType operator) {
   return result;
 }
 
-void freeList(Node *list) {
-  while (list != NULL) {
-    Node *tmp = list;
-    list = list->next;
-    free(tmp);
-  }
-}
+// void freeList(Node *list) {
+//   while (list != NULL) {
+//     Node *tmp = list;
+//     list = list->next;
+//     free(tmp);
+//   }
+// }
 
 // int main() {
 //   char str_1[200] = "-0.1+0.2";  // -0.1+0.2

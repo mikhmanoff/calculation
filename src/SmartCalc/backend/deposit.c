@@ -1,16 +1,16 @@
 #include "calc_support.h"
 
 void dateCorrect(int *date, int leapYear) {
-    if (*date == JANUARY || *date == MARCH || *date == MAY || *date == JULY ||
-        *date == AUGUST || *date == OCTOBER || *date == DECEMBER)
-        *date = 31;
-    else if (*date == APRIL || *date == JUNE || *date == SEPTEMBER ||
-             *date == NOVEMBER)
-        *date = 30;
-    else if (*date == FEBRUARY && leapYear)
-        *date = 29;
-    else if (*date == FEBRUARY && !leapYear)
-        *date = 28;
+  if (*date == JANUARY || *date == MARCH || *date == MAY || *date == JULY ||
+      *date == AUGUST || *date == OCTOBER || *date == DECEMBER)
+    *date = 31;
+  else if (*date == APRIL || *date == JUNE || *date == SEPTEMBER ||
+           *date == NOVEMBER)
+    *date = 30;
+  else if (*date == FEBRUARY && leapYear)
+    *date = 29;
+  else if (*date == FEBRUARY && !leapYear)
+    *date = 28;
 }
 
 void depositCalcCore(Deposit *dp) {
@@ -87,11 +87,11 @@ void addToAmount(Deposit *dp, int counter) {
     } else if (dp->replenishmentList[i].term == EVERY_HALF_YEAR) {
       if (counter > 0 && (month == dp->currentMoth - 1 ||
                           month == (dp->currentMoth + 5) % 12)) {
-          addAmountEveryTime(dp, i);
+        addAmountEveryTime(dp, i);
       }
     } else if (dp->replenishmentList[i].term == EVERY_YEAR) {
       if (counter > 0 && month == dp->currentMoth - 1) {
-          addAmountEveryTime(dp, i);
+        addAmountEveryTime(dp, i);
       }
     }
   }
@@ -106,11 +106,11 @@ void remAmount(Deposit *dp, int counter) {
     } else if (dp->listPartialWithdrawals[i].term == EVERY_HALF_YEAR) {
       if (counter > 0 && (month == dp->currentMoth - 1 ||
                           month == (dp->currentMoth + 5) % 12)) {
-          remAmountEveryTime(dp, i);
+        remAmountEveryTime(dp, i);
       }
     } else if (dp->listPartialWithdrawals[i].term == EVERY_YEAR) {
       if (counter > 0 && month == dp->currentMoth - 1) {
-          remAmountEveryTime(dp, i);
+        remAmountEveryTime(dp, i);
       }
     }
   }

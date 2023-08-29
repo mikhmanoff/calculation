@@ -1,16 +1,16 @@
 #include "calc_support.h"
 
-void print(Node *list) {
-  if (list == NULL) {
-    printf("NULL\n");
-    exit(0);
-  }
-  for (Node *p = list; p != NULL; p = p->next) {
-    printf("Приоритет - %d\nЧисло - %lf\nТип - %d\n-------------------\n",
-           p->priority, p->num, p->funType);
-  }
-  printf("\n");
-}
+// void print(Node *list) {
+//   if (list == NULL) {
+//     printf("NULL\n");
+//     exit(0);
+//   }
+//   for (Node *p = list; p != NULL; p = p->next) {
+//     printf("Приоритет - %d\nЧисло - %lf\nТип - %d\n-------------------\n",
+//            p->priority, p->num, p->funType);
+//   }
+//   printf("\n");
+// }
 
 void push(Node **pList, double num, funcType funType, int priority) {
   Node *p = malloc(sizeof(Node));
