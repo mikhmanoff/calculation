@@ -42,35 +42,3 @@ Node *inverseNode(Node *list) {
 
   return tmp;
 }
-
-// int main() {
-//   Node *list = NULL;
-
-//   push(&list, 14.48, tan_t, ULTRA_PRIORITY);
-//   push(&list, 23.8, sin_t, LOW_PRIORITY);
-//   push(&list, 4.4, cos_t, MEDIUM_PRIORITY);
-//   push(&list, 400.4, cos_t, LOW_PRIORITY);
-
-//   push(&list, 46.657, mod_t, LOW_PRIORITY);
-//   push(&list, 344.345, tan_t, HIGH_PRIORITY);
-//   push(&list, 23324.546, sin_t, ULTRA_PRIORITY);
-//   push(&list, 2323423.657, atan_t, MEDIUM_PRIORITY);
-
-//   //   print(list);
-//   //   printf("\n\n\n");
-
-//   //   print(list);
-
-//   //   pop(&list);
-//   //   printf("\n\n\n\n");
-
-//   //   print(list);
-//   while (!isEmpty(list)) {
-//     pop(&list);
-//     if (!isEmpty(list)) {
-//       printf("%lf\n", list->num);
-//     };
-//   }
-
-//   return 0;
-// }

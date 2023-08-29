@@ -35,9 +35,10 @@ debug: clean $(LIB)
 	$(CC) $(CFLAGS) core/s21_calculate.c $(LIB) -lm -o debug
 	./debug
 
-valgrind: debug
-	valgrind --tool=memcheck --leak-check=full --track-origins=yes \
-	 --show-reachable=yes --num-callers=20 --track-fds=yes ./debug
+valgrind: 
+	make test
+	$(CC) $(CFLAGS) -g tests/*.c $(LIB) $(TEST_FLAGS) -o test
+	valgrind --leak-check=full --show-leak-kinds=all -s ./test
 
 test: $(LIB)
 	$(CC) $(CFLAGS) -g tests/*.c $(LIB) $(TEST_FLAGS) -o test

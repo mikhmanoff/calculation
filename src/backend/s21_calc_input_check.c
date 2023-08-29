@@ -174,13 +174,3 @@ int checkCorrectness(const char *s, int *leftBrackets, int *rightBrackets,
   if (*rightBrackets > *leftBrackets) flag = FAILTURE;
   return flag;
 }
-
-// int main() {
-//   char *s = "4mid2+(5-4)";
-//   int rightBracket = 0, leftBracket = 0;
-//   int err = checkInputString(s);
-
-//   printf("%d\n", err);
-
-//   return 0;
-// }

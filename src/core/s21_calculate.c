@@ -102,8 +102,16 @@ double evaluate(double val1, double val2, funcType operator) {
   return result;
 }
 
+void freeList(Node *list) {
+  while (list != NULL) {
+    Node *tmp = list;
+    list = list->next;
+    free(tmp);
+  }
+}
+
 // int main() {
-//   char str_1[200] = "sin(23.23)";  // -0.1+0.2
+//   char str_1[200] = "-0.1+0.2";  // -0.1+0.2
 //   if (checkInputString(str_1) == 0) {
 //     Node *number_list = parseInput(str_1);
 //     number_list = s21_infixToPolsih(number_list, 0);
@@ -114,5 +122,5 @@ double evaluate(double val1, double val2, funcType operator) {
 //   }
 
 //   // print(number_list);
-//   // return 0;
+//   return 0;
 // }

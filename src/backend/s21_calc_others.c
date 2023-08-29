@@ -1,12 +1,10 @@
 #include "calc_support.h"
 
-int operatorCheck(funcType operator) {
+int operatorCheck(funcType opType) {
   int res = 0;
 
-  if (operator== plus_t || operator== minus_t || operator== div_tt || operator==
-      mult_t ||
-      operator== pow_t ||
-      operator== mod_t) {
+  if (opType == plus_t || opType == minus_t || opType == div_tt ||
+      opType == mult_t || opType == pow_t || opType == mod_t) {
     res = 1;
   }
   return res;
